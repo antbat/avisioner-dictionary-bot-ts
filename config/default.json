@@ -1,5 +1,13 @@
 {
-    "port": 3000,
+    "port": 3100,
+    "user": {
+        "api": "http://localhost:3000",
+        "password": "Un9V1+rKQZoKcS3qf8Wk9",
+        "email": "englishDictionary@avisioner.com"
+    },
+    "socket": {
+        "url": "http://localhost:3001"
+    },
     "logging": {
         "default": "logs",
         "error": "error-logs"
