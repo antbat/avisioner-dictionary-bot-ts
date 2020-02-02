@@ -1,9 +1,14 @@
 {
     "port": 3100,
-    "user": {
+    "auth": {
         "api": "http://localhost:3000",
-        "password": "Un9V1+rKQZoKcS3qf8Wk9",
-        "email": "englishDictionary@avisioner.com"
+        "password": "Un9V1+rKQZoKcS3qf8Wk9C2euKwiZck7J",
+        "email": "englishDictionaryBot@avisioner.com"
+    },
+    "core": {
+        "api": "http://localhost:3002",
+        "password": "Uh4+uNaZ8kuon771jCAMJRQoR/j8jNRTxJmUAFr",
+        "email": "core@avisioner.com"
     },
     "socket": {
         "url": "http://localhost:3001"
@@ -27,5 +32,9 @@
             "log": "debug",
             "keepAlive": true
         }
+    },
+    "JWT": {
+        "secret": "5ac4fv57a633r30412fe5152900cbg3ca9bd",
+        "expiresIn": "60d"
     }
 }

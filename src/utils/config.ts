@@ -5,11 +5,16 @@
 import currentConfig from 'config'
 export interface Config {
     port: number;
-    user: {
+    auth: {
         api: string,
         password: string,
         email: string
     };
+    core: {
+        api: string,
+        password: string,
+        email: string
+    }
     socket: {
         url: string
     };
@@ -32,6 +37,10 @@ export interface Config {
             log: string,
             keepAlive: boolean
         }
+    },
+    JWT: {
+        secret: string,
+        expiresIn: string
     }
 }
 export const config: Config = currentConfig as any;

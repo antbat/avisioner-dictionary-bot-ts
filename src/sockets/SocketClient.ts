@@ -12,7 +12,7 @@ export class SocketClient {
     constructor(url: string, options: SocketIOClient.ConnectOpts) {
         this.client = socketClient(url, options);
 
-        this.client.emit('message', 'from Bot with love');
+        this.client.emit(TypeSocketEvent.message, {text: 'from Bot with love'});
 
         this.client.on(TypeSocketEvent.connect, async () => {
             logger.debug('dictionary bot connected to socket');
@@ -21,7 +21,10 @@ export class SocketClient {
             logger.debug('dictionary bot disconnected from socket');
         });
         this.client.on(TypeSocketEvent.message, async (msg: any) => {
-            logger.debug('dictionary bot get message', msg);
+            const message = JSON.parse(msg);
+            logger.debug(`dictionary bot get message ${message.text}`);
+            message.text = `ok, it's dictionary bot ${message.text}`;
+            this.client.emit(TypeSocketEvent.message, message);
         });
     }
 }

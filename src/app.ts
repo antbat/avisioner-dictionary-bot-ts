@@ -56,6 +56,7 @@ export async function getApp(): Promise<App> {
 
     await mongooseConnection;
 
+
     // express application init
     const controllers = [
         new RootController()
